@@ -1,0 +1,60 @@
+---
+title: CleatCentral – Building a Football-Focused E-Commerce Experience
+description: A niche e-commerce platform helping football players find the right boots, with modern UI and theme-aware branding.
+previewImage: ./Showcase.png
+slug: cleat-central
+---
+
+When I built **CleatCentral** as my capstone project for the Full-Stack Development Bootcamp, I didn’t want it to be *just another e-commerce clone*. I wanted to craft something that felt modern, polished, and actually solved a niche problem — helping football players find the right boots.
+
+## Why CleatCentral?
+
+Buying football cleats online can be tricky. You don’t just pick a size and brand — you need to think about playing surface, boot height, and style. Most e-commerce sites don’t make this decision-making process easy. That’s where CleatCentral steps in: a **football-focused shopping platform** that not only sells cleats but also educates players about the right choice for their game.
+
+## Standout Features
+
+Beyond the standard shopping features, I added some UI touches to elevate the user experience:
+
+- **Product Carousel** – On product detail pages, users can browse through multiple product views in a clean, interactive carousel.
+    ![Cleat Example Product](https://raw.githubusercontent.com/tanay-787/cleat-central/HEAD/assets/Showcase.png) 
+<p className="text-center text-sm text-muted-foreground -mt-2">Product detail page with carousel for different product views.</p>
+
+- **Dynamic Theme-Aware Branding** – Both the **logo and favicon automatically adapt** to light or dark theme preferences. The system even detects OS theme settings for a personalized experience.
+
+   <Carousel className="w-full max-w-sm mx-auto my-8">
+      <CarouselContent>
+        <CarouselItem>
+          <img src="/cleat-central/branding-light.png" alt="CleatCentral Branding - Light Mode" className="rounded-lg" />
+          <p className="text-center text-sm text-muted-foreground mt-2">Dynamic theme-aware branding (Light Mode).</p>
+        </CarouselItem>
+        <CarouselItem>
+          <img src="/cleat-central/branding-dark.png" alt="CleatCentral Branding - Dark Mode" className="rounded-lg" />
+          <p className="text-center text-sm text-muted-foreground mt-2">Dynamic theme-aware branding (Dark Mode).</p>
+        </CarouselItem>
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+
+- **“Know Your Boots” Blog** – A one-of-a-kind guide that breaks down boot types (Firm Ground, Turf, Indoor, etc.) and styles (High-Top vs. Low-Top). This feature transforms CleatCentral from a store into a *trusted advisor*, helping users make informed purchases.
+
+<Carousel className="w-full max-w-sm mx-auto my-8">
+      <CarouselContent>
+        <CarouselItem>
+          <img src="/cleat-central/surface-types.png" alt="Know Your Boots - Surface types" className="rounded-lg" />
+          <p className="text-center text-sm text-muted-foreground mt-2">Know Your Boots - Surface types.</p>
+        </CarouselItem>
+        <CarouselItem>
+          <img src="/cleat-central/boot-styles.png" alt="Know Your Boots - Boot styles" className="rounded-lg" />
+          <p className="text-center text-sm text-muted-foreground mt-2">Know Your Boots - Boot styles.</p>
+        </CarouselItem>
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+
+## Lessons Learned
+
+- The importance of **balancing scope vs. polish** (I focused on a clean, working experience first because of the time-constraints and planned order history/payment features for later).
+- Implementing **theme-aware assets** to make branding feel more “alive.”
+- The whole process of developing and deploying a full-stack application on the cloud.
