@@ -1,0 +1,84 @@
+---
+title: QPAS – Revolutionizing Question Paper Management for Institutions
+description: A centralized, role-aware question paper archive with advanced search, reusable content, and secure access controls.
+previewImage: ./qpas-dashboard.png
+slug: qpas
+---
+
+When I built **QPAS** (Question Paper Archives System), my goal was to address a pressing need in educational institutions: the lack of a centralized, easy-to-use platform for managing and accessing question papers. Instead of another scattered storage solution, I wanted QPAS to be a polished, role-aware system that makes discovery, reuse, and secure sharing effortless.
+
+## Why QPAS?
+
+Question papers are often scattered across drives, LMSs, or physical cabinets. That fragmentation makes retrieval slow, collaboration harder, and continuity between instructors inconsistent. QPAS was built to solve that by creating a single, searchable, and permissioned archive tailored to institutional workflows.
+
+## Standout Features
+
+QPAS goes beyond basic upload-and-store functionality. A few UX and engineering choices I made to elevate the experience:
+
+- **Centralized Repository** – Store papers in one secure archive, indexed by subject, degree, exam type, and institution to allow fast, contextual discovery.
+  ![QPAS Dashboard](./qpas-dashboard.png)
+  <p className="text-center text-sm text-muted-foreground -mt-2">Dashboard with role-aware widgets for admins, teachers, and students.</p>
+
+- **Role-Based Access Control** – Fine-grained roles (student, teacher, admin) with JWT-protected routes and permission checks on every action so institutions can control who can view, upload, or modify content.
+
+- **Advanced Search & Filters** – Powerful search with filters by subject, degree, exam year, paper type, and institution to find the exact paper you need quickly.
+  ![Search Functionality](./qpas-search.png)
+  <p className="text-center text-sm text-muted-foreground -mt-2">Robust search and filters to pinpoint the right papers.</p>
+
+- **Paper Upload & Management** – Upload multiple file types (PDF, DOCX) with metadata capture (course, semester, exam year). Teachers can version and adapt previous papers to reduce prep time.
+  ![Paper Upload Feature](./qpas-upload.png)
+  <p className="text-center text-sm text-muted-foreground -mt-2">Upload flow that captures metadata and allows versioning.</p>
+
+- **Access Management** – Papers can be marked public or private at the institution level, with admins configuring sharing policies and download permissions.
+
+- **Reusable Content** – Teachers can clone and edit existing papers to create new ones, keeping institutional knowledge consistent and saving time.
+
+{/* Example: small visual carousel showcasing theme-aware assets or multiple screenshots */}
+<Carousel className="w-full max-w-2xl mx-auto my-8">
+  <CarouselContent>
+    <CarouselItem>
+      <img src="/qpas/qpas-dashboard.png" alt="QPAS Dashboard" className="rounded-lg" />
+      <p className="text-center text-sm text-muted-foreground mt-2">Role-aware dashboard view.</p>
+    </CarouselItem>
+    <CarouselItem>
+      <img src="/qpas/qpas-search.png" alt="QPAS Search" className="rounded-lg" />
+      <p className="text-center text-sm text-muted-foreground mt-2">Advanced search and filters.</p>
+    </CarouselItem>
+    <CarouselItem>
+      <img src="/qpas/qpas-upload.png" alt="QPAS Upload" className="rounded-lg" />
+      <p className="text-center text-sm text-muted-foreground mt-2">Paper upload & metadata capture.</p>
+    </CarouselItem>
+  </CarouselContent>
+  <CarouselPrevious />
+  <CarouselNext />
+</Carousel>
+
+## How I Built It
+
+- **Frontend**: React with React Router. I used Context API and React Query to manage application state and cached API responses for snappy UI interactions.
+- **Backend**: Node.js and Express for RESTful APIs, with secure endpoints enforcing permissions and role checks.
+- **Storage & Data**: Firebase (Firestore for metadata, Storage for files) for scalable, reliable file hosting and realtime metadata updates.
+- **Authentication**: JWT-based authentication with role information included in tokens and validated on every protected route.
+- **Deployment**: Hosted on Vercel for the frontend; backend hosted on a node server with Firebase services for data/file storage.
+
+## Technology Stack
+
+- Frontend: React, React Router, Context API, React Query, Axios
+- Backend: Node.js, Express.js
+- Storage & Database: Firebase (Firestore & Storage)
+- Authentication: JSON Web Tokens (JWT)
+- Deployment: Vercel
+
+## Lessons Learned
+
+- Designing strict but flexible **role-based access control** is crucial for institutional tools where privacy and auditability matter.
+- Integrating **Firebase** for file storage and metadata lets you offload scalability concerns while keeping the developer experience smooth.
+- Prioritizing **search and metadata** up-front significantly improves long-term usability — without good metadata, archives are just big buckets of files.
+- Building workflows for **reuse and versioning** reduces teacher prep time and improves consistency across semesters.
+
+QPAS was a rewarding project that combined UX, security, and scalable file management. If you’d like, I can:
+- convert this MDX to match your site's layout/components,
+- add more screenshots or GIFs demonstrating upload and search flows,
+- or generate a concise readme/README section for the repo with setup and deployment steps.
+
+```
