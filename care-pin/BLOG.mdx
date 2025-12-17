@@ -4,18 +4,18 @@ description: A location-based shift tracking platform built to help healthcare o
 slug: care-pin
 ---
 
-CarePin is a care worker shift tracking PWA designed to simplify how healthcare organizations manage field staff. Care workers can check in with a single tap when they arrive at a location, while managers get immediate visibility through a centralized dashboard. The emphasis throughout the product is clarity—clear actions for workers and clear data for administrators.
+CarePin is a care worker shift tracking PWA designed to simplify how healthcare organizations manage field staff. Care workers can check in with a single tap when they arrive at a location, while managers get immediate visibility through a centralized dashboard.
 
 
 ## Technology choices and learning curve
 
-CarePin was built using **Next.js** as the application framework, which allowed me to work with Serwist, a collection of JavaScript libraries for progressive web apps.. For data communication, I used **GraphQL**, which was new to me at the time and required a shift in how I thought about fetching and structuring data compared to traditional REST APIs.
+CarePin was built using <TechBadge icon="NextJS" /> as the application framework, which allowed me to work with Serwist, a collection of JavaScript libraries for progressive web apps.. For data communication, I used **GraphQL**, which was new to me at the time and required a shift in how I thought about fetching and structuring data compared to traditional REST APIs.
 
-The backend uses **Neon**, a managed serverless PostgreSQL database, paired with **Prisma ORM** for type-safe database access. This combination helped me understand how modern serverless databases behave in production environments, especially around connections, performance, and schema management.
+The backend uses **Neon**, a managed serverless PostgreSQL database, paired with **Prisma ORM** for type-safe database access. This combination helped me understand how modern serverless databases work.
 
-For authentication, I integrated **Auth0**, handling secure user login, role-based access, and session management without reinventing authentication logic.
+For authentication, I integrated **Auth0**, handling secure user login and session management without reinventing authentication logic.
 
-On the UI side, I chose Ant Design, a production-grade component library commonly used in enterprise applications. Working with it helped me understand how to balance custom UI requirements with strict design system constraints, accessibility considerations, and consistency across complex screens such as dashboards and management panels.
+On the UI side, I chose **Ant Design**, a production-grade component library commonly used in enterprise applications. Working with it helped me understand how to balance custom UI requirements with strict design system constraints, accessibility considerations, and consistency across complex screens such as dashboards and management panels.
 
 For location-based features, the application integrates React Leaflet for map rendering, OpenStreetMap (via Nominatim) for geocoding and location search, and the Browser Geolocation API to capture real-time worker positions. This combination enabled accurate perimeter mapping and location-aware check-ins directly within both the admin dashboard and worker-facing views, reinforcing the core use case of reliable, location-based shift tracking.
 
