@@ -1,0 +1,43 @@
+---
+title: CarePin – Care Worker Shift Tracking
+description: A location-based shift tracking platform built to help healthcare organizations manage care workers with clarity, accountability, and ease.
+slug: care-pin
+---
+
+CarePin is a care worker shift tracking application designed to simplify how healthcare organizations manage field staff. The goal was to remove ambiguity around check-ins, improve accountability, and give operations teams real-time visibility—without adding friction for care workers on the ground.
+
+This project was particularly important for me because it pushed me into an entirely new set of technologies and architectural decisions. Unlike my previous frontend-focused projects, CarePin required thinking in terms of full-stack data flow, authentication, and production-ready UI patterns.
+
+## Understanding the problem
+
+Care workers often operate across multiple locations, with little room for manual reporting or delayed updates. Managers need to know who has arrived, when they checked in, and whether schedules are being followed—ideally in real time. CarePin approaches this problem with simple, location-based check-ins that work reliably on any device.
+
+Care workers can check in with a single tap when they arrive at a location, while managers get immediate visibility through a centralized dashboard. The emphasis throughout the product is clarity—clear actions for workers and clear data for administrators.
+
+## Technology choices and learning curve
+
+CarePin was built using **Next.js** as the application framework, which allowed me to work with Serwist, a collection of JavaScript libraries for progressive web apps.. For data communication, I used **GraphQL**, which was new to me at the time and required a shift in how I thought about fetching and structuring data compared to traditional REST APIs.
+
+The backend uses **Neon**, a managed serverless PostgreSQL database, paired with **Prisma ORM** for type-safe database access. This combination helped me understand how modern serverless databases behave in production environments, especially around connections, performance, and schema management.
+
+For authentication, I integrated **Auth0**, handling secure user login, role-based access, and session management without reinventing authentication logic.
+
+On the UI side, I chose Ant Design, a production-grade component library commonly used in enterprise applications. Working with it helped me understand how to balance custom UI requirements with strict design system constraints, accessibility considerations, and consistency across complex screens such as dashboards and management panels.
+
+For location-based features, the application integrates React Leaflet for map rendering, OpenStreetMap (via Nominatim) for geocoding and location search, and the Browser Geolocation API to capture real-time worker positions. This combination enabled accurate perimeter mapping and location-aware check-ins directly within both the admin dashboard and worker-facing views, reinforcing the core use case of reliable, location-based shift tracking.
+
+## Focus on real-world usability
+
+CarePin is intentionally mobile-first, recognizing that most care workers interact with the system from their phones. The interface prioritizes speed, clarity, and minimal input—check in, add notes if needed, and continue with work.
+
+For managers, the dashboard emphasizes real-time insights, reporting, and accuracy. The goal was not to overwhelm users with data, but to surface exactly what matters at the right moment.
+
+## What this project taught me
+
+CarePin marked a clear step forward in how I approach application development. It strengthened my understanding of:
+- Working with unfamiliar technologies under real constraints
+- Designing systems that balance frontend UX with backend reliability
+- Using production-grade tools instead of hobby-focused libraries
+- Thinking beyond screens and into data flow, authentication, and scalability
+
+CarePin represents my transition from building interfaces to building systems.
