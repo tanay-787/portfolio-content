@@ -119,25 +119,46 @@ async function getRepoInfo(owner, name) {
  * @param {string} url        Landing page URL to screenshot.
  * @param {string} outputPath Absolute path where the image will be written.
  */
-async function takeScreenshot(url, outputPath) {
+  async function takeScreenshot(url, outputPath) {
   const browser = await puppeteer.launch({
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    headless: 'new',
+    args: [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+      '--disable-dev-shm-usage',
+      '--disable-accelerated-2d-canvas',
+      '--disable-gpu',
+      '--window-size=1980,1080',
+    ],
+    defaultViewport: {
+      width: 1980,
+      height: 1080,
+    },
   });
 
   try {
     const page = await browser.newPage();
-    await page.setViewport({ width: 1280, height: 800 });
-    await page.goto(url, { waitUntil: 'load', timeout: 30000 });
+    await page.setViewport({ width: 1980, height: 1080 });
+    await page.goto(url, { waitUntil: 'networkidle0', timeout: 30000 });
+
+    // Wait for the Largest Contentful Paint element to render
+    await page.evaluate(async () => {
+      await new Promise((resolve) => {
+        new PerformanceObserver((entryList, obs) => {
+          if (entryList.getEntries().length > 0) {
+            obs.disconnect();
+            resolve();
+          }
+        }).observe({ type: 'largest-contentful-paint', buffered: true });
+      });
+    });
 
     const imageType = outputPath.endsWith('.webp') ? 'webp' : 'png';
     await page.screenshot({ path: outputPath, type: imageType });
-
-    console.log(`  Screenshot saved to: ${path.relative(ROOT_DIR, outputPath)}`);
   } finally {
     await browser.close();
   }
 }
-
 /**
  * Determine the path of the Showcase image inside a project's assets directory.
  * Prefers .png; falls back to .webp.
