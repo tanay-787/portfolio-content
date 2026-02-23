@@ -6,13 +6,13 @@ slug: ghcc-client
 projectType: package
 ---
 
-<TechBadge icon="GhCC Client" packageUrl="https://www.npmjs.com/package/ghcc-client"/> was developed as a submission for the [Github Copilot CLI Challenge](https://dev.to/tanay_gupte_d6a3d6fe48267/ghcc-client-access-your-favorite-cli-tool-from-your-mobile-11ia).
+<TechBadge icon="GhCC Client" packageUrl="https://www.npmjs.com/package/ghcc-client"/> was developed for my personal use as well as a submission for the [Github Copilot CLI Challenge](https://dev.to/tanay_gupte_d6a3d6fe48267/ghcc-client-access-your-favorite-cli-tool-from-your-mobile-11ia).
 
-While <TechBadge icon="Copilot"/> CLI is incredibly capable, interacting with it away from your machine is difficult. Typing complex commands on a mobile keyboard is frustrating, and many interactive terminal controls simply don’t translate well to touch devices. GhCC Client bridges this gap by transforming your Copilot CLI session into a mobile-accessible, voice-friendly experience.
+While <TechBadge icon="Copilot"/> CLI is incredibly capable, interacting with it away from your machine is difficult. Typing complex commands on a mobile keyboard is frustrating, and many interactive terminal controls simply don’t translate well to touch devices.
 
 The idea was straightforward but impactful: keep your Copilot CLI running in a persistent terminal session and remotely interact with it from any device with a browser. This enables lightweight development workflows even when you're not sitting at your desk.
 
-Under the hood, the tool uses <TechBadge icon="Node"/> to power the CLI client and orchestrate the workflow. <TechBadge icon="Tmux" repoUrl="https://github.com/tmux/tmux" /> ensures sessions remain alive across disconnects and terminal closures, while <TechBadge icon="ttyd" repoUrl="https://github.com/tsl0922/ttyd" /> a web-based terminal layer exposes the session securely to mobile devices via <TechBadge icon="SocketIO"/>. A custom mobile keyboard toolbar recreates essential desktop keys like Ctrl, Tab, and arrow keys — controls that are normally missing on phones.
+Under the hood, the tool uses <TechBadge icon="Node"/> to power the CLI client and orchestrate the workflow. <TechBadge icon="Tmux" repoUrl="https://github.com/tmux/tmux" /> ensures sessions remain alive across disconnects and terminal closures, while <TechBadge icon="ttyd" repoUrl="https://github.com/tsl0922/ttyd" /> a web-based terminal layer exposes the session securely to devices via <TechBadge icon="SocketIO"/>. A custom mobile keyboard toolbar recreates essential desktop keys like Ctrl, Tab, and arrow keys — controls that are normally missing on phones.
 
 One of the most practical aspects of GhCC Client is its **voice-friendly workflow**. By leveraging native mobile speech-to-text (like Gboard’s microphone), users can speak prompts naturally and send them directly to Copilot CLI, turning the terminal into a more conversational interface.
 
