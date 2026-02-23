@@ -1,0 +1,25 @@
+---
+title: GhCC Client
+description: A Node.js CLI utility that makes GitHub Copilot CLI remotely accessible and mobile-friendly.
+previewImage: https://raw.githubusercontent.com/tanay-787/portfolio-content/main/ghcc/assets/Showcase.webp
+slug: ghcc-client
+projectType: package
+---
+
+GhCC Client was built to solve a very real developer friction point — **powerful CLI tools are still tied to the desktop**.
+
+While GitHub Copilot CLI is incredibly capable, interacting with it away from your machine is difficult. Typing complex commands on a mobile keyboard is frustrating, and many interactive terminal controls simply don’t translate well to touch devices. GhCC Client bridges this gap by transforming your Copilot CLI session into a mobile-accessible, voice-friendly experience.
+
+The idea was straightforward but impactful: keep your Copilot CLI running in a persistent terminal session and remotely interact with it from any device with a browser. This enables lightweight development workflows even when you're not sitting at your desk.
+
+Under the hood, the tool uses <TechBadge icon="Node.js"/> to power the CLI client and orchestrate the workflow. <TechBadge icon="tmux"/> ensures sessions remain alive across disconnects and terminal closures, while a web-based terminal layer exposes the session securely to mobile devices. A custom mobile keyboard toolbar recreates essential desktop keys like Ctrl, Tab, and arrow keys — controls that are normally missing on phones.
+
+One of the most practical aspects of GhCC Client is its **voice-friendly workflow**. By leveraging native mobile speech-to-text (like Gboard’s microphone), users can speak prompts naturally and send them directly to Copilot CLI, turning the terminal into a more conversational interface.
+
+The end result is a lightweight remote interaction layer purpose-built for AI CLIs — not a heavy remote desktop replacement, but a focused bridge that makes Copilot more portable and accessible.
+
+## Things to consider
+
+- The project was built in **3 days** for the GitHub Copilot CLI Challenge and is an MVP.  
+- Compatibility across all environments is still evolving and may require further testing.
+- The tool intentionally focuses on terminal interaction rather than full remote machine control.
