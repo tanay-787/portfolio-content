@@ -8,9 +8,9 @@ projectType: web
 
 **QPAS** or **Question Paper Archives** was developed as the final year project for the completion of the BScIT program. The aim was to create a Proof of Concept(PoC) system that could host previous question papers in a way that is secure and controllable while being able to organize and easily distribute papers, thereby reducing the friction and inconsistencies that the students and teachers regularly face in the current traditional setup that consists of old question papers being scattered accross digital drives, physical cabinets and even inside Whatsapp Groups.
 
-The application features role-based dashboards for **Students**, **Teachers** and **Administrators**. 
+The system provides role-based dashboards for **Administrators**, **Teachers**, and **Students**. These roles follow a strict hierarchy where Administrators oversee Teachers, and Teachers oversee Students. Administrators create **Institutions**, which function as organizational archives. Users cannot join an Institution directly — they must first submit an **Application Form** and pass a verification process. Approval authority follows the role hierarchy, where **Administrators review and approve Teacher requests**, while **Teachers review and approve Student requests**.
 
-
+Within an Institution, Administrators design the application forms for both Teachers and Students. Teachers are responsible for creating question papers and controlling their visibility, either intra-institutional (private) or inter-institutional (public). Students primarily act as consumers; once approved, they can search and access question papers using metadata-based filtering.
 
 ## How I Built It
 
@@ -20,24 +20,3 @@ The application features role-based dashboards for **Students**, **Teachers** an
 - **Authentication**: JWT-based authentication with role information included in tokens and validated on every protected route.
 - **Deployment**: Hosted on Vercel for the frontend; backend hosted on a node server with Firebase services for data/file storage.
 
-## Technology Stack
-
-- Frontend: React, React Router, Context API, React Query, Axios
-- Backend: Node.js, Express.js
-- Storage & Database: Firebase (Firestore & Storage)
-- Authentication: JSON Web Tokens (JWT)
-- Deployment: Vercel
-
-## Lessons Learned
-
-- Designing strict but flexible **role-based access control** is crucial for institutional tools where privacy and auditability matter.
-- Integrating **Firebase** for file storage and metadata lets you offload scalability concerns while keeping the developer experience smooth.
-- Prioritizing **search and metadata** up-front significantly improves long-term usability — without good metadata, archives are just big buckets of files.
-- Building workflows for **reuse and versioning** reduces teacher prep time and improves consistency across semesters.
-
-QPAS was a rewarding project that combined UX, security, and scalable file management. If you’d like, I can:
-- convert this MDX to match your site's layout/components,
-- add more screenshots or GIFs demonstrating upload and search flows,
-- or generate a concise readme/README section for the repo with setup and deployment steps.
-
-```
